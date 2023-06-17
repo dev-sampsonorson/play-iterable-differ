@@ -34,7 +34,7 @@ export class EmployeeV1Component implements DoCheck {
   constructor(
     private differStrategies: IterableDiffers
   ) {
-    this.differStrategy = this.differStrategies.find(this.employees).create();
+    this.differStrategy = this.differStrategies.find(this.employees).create(this.trackBy);
   }
 
   ngDoCheck(): void {
@@ -64,5 +64,9 @@ export class EmployeeV1Component implements DoCheck {
     this.employees = [
       this.employee3, this.employee2
     ];
+  }
+
+  trackBy(index: number, employee: Employee) {
+    return employee.id;
   }
 }

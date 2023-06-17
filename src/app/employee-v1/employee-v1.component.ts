@@ -1,5 +1,6 @@
 import { Component, DoCheck, IterableChangeRecord, IterableDiffer, IterableDiffers } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MyNgStyleDirective } from '../my-ng-style.directive';
 
 /*
   0. Inject repository of iterlabel diffing strategies
@@ -18,7 +19,7 @@ interface Employee {
 @Component({
   selector: 'app-employee-v1',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MyNgStyleDirective],
   templateUrl: './employee-v1.component.html',
   styleUrls: ['./employee-v1.component.scss']
 })
